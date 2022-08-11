@@ -6,7 +6,19 @@
     <description>Recent content on Robert Marck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Aug 2022 23:43:20 -0600</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Aug 2022 11:22:38 -0600</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Second_post</title>
+      <link>http://example.org/posts/second_post/</link>
+      <pubDate>Thu, 11 Aug 2022 11:22:38 -0600</pubDate>
+      
+      <guid>http://example.org/posts/second_post/</guid>
+      <description>Website Done:
+Installed Hugo on personal computer Set up access on work machine for monitoring Set up Amplify, and completed a successful build Site published! Banner photo added and working on local To Do:
+Add photos to posts Integrate LaTeX Get banner working on live site Workout
+Back in the gym last night. Goal was to just get in the door. Once that was done everything else was a bonus. I focuses on rehab movements: sled pulls, reverse sled pulls, dead hangs, and leg lifts.</description>
+    </item>
+    
     <item>
       <title>First Post</title>
       <link>http://example.org/posts/first-post/</link>
