@@ -2,10 +2,11 @@
 title: "Algorithm for Generating a Memorable and Secure Password"
 date: 2022-08-12T22:34:36-06:00
 draft: false
+featured_image: '/images/xkcd_passwords.png'
 ---
 
 
-This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me I'll explain the math later.
+This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me his password and I still remember it, but I couldn't use it to get into his information. 
 
 
 
