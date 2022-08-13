@@ -6,7 +6,29 @@
     <description>Recent content in Posts on Robert Marck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Aug 2022 11:22:38 -0600</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 22:34:36 -0600</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm for Generating a Memorable and Secure Password</title>
+      <link>http://example.org/posts/working_notes/</link>
+      <pubDate>Fri, 12 Aug 2022 22:34:36 -0600</pubDate>
+      
+      <guid>http://example.org/posts/working_notes/</guid>
+      <description>This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me his password and I still remember it, but I couldn&amp;rsquo;t use it to get into his information.
+The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember
+Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&amp;rsquo;t pick your favorite.</description>
+    </item>
+    
+    <item>
+      <title>Cissp Notes Day 1</title>
+      <link>http://example.org/posts/cissp_notes_1/</link>
+      <pubDate>Fri, 12 Aug 2022 11:48:48 -0600</pubDate>
+      
+      <guid>http://example.org/posts/cissp_notes_1/</guid>
+      <description>Done:
+Got into the gym last night. &amp;ndash; A bunch (9?) sled pulls backwards and forwards. Working on correcting my knee issues. 135 lbs. &amp;ndash; Leg/knee lifts. Good for the Iliopsoas. Gonna keep doing these. &amp;ndash; Deadhangs: Made a huge difference in my should comfort. Gotta keep doing them. &amp;ndash; API Tests for the Console endpoints started. &amp;ndash; Docker Tutorial started. To Do:
+Image support on my site is not working.</description>
+    </item>
+    
     <item>
       <title>Second_post</title>
       <link>http://example.org/posts/second_post/</link>
