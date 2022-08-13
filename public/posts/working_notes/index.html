@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Algorithm for Generating a Memorable and Secure Password | Robert Marck</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me I&rsquo;ll explain the math later.
+The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember
+Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&rsquo;t pick your favorite. This makes it easier to remember. Examples: - Dune - Inception - The Raven by Edgar Allan Poe">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Algorithm for Generating a Memorable and Secure Password" />
+<meta property="og:description" content="This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me I&rsquo;ll explain the math later.
+The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember
+Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&rsquo;t pick your favorite. This makes it easier to remember. Examples: - Dune - Inception - The Raven by Edgar Allan Poe" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/working_notes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-12T22:34:36-06:00" />
+<meta property="article:modified_time" content="2022-08-12T22:34:36-06:00" /><meta property="og:site_name" content="Robert Marck" />
+
+<meta itemprop="name" content="Algorithm for Generating a Memorable and Secure Password">
+<meta itemprop="description" content="This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me I&rsquo;ll explain the math later.
+The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember
+Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&rsquo;t pick your favorite. This makes it easier to remember. Examples: - Dune - Inception - The Raven by Edgar Allan Poe"><meta itemprop="datePublished" content="2022-08-12T22:34:36-06:00" />
+<meta itemprop="dateModified" content="2022-08-12T22:34:36-06:00" />
+<meta itemprop="wordCount" content="229">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm for Generating a Memorable and Secure Password"/>
+<meta name="twitter:description" content="This is based loosely on the algorithm from XKCD: https://xkcd.com/936/, and a conversation with a friend. He told me I&rsquo;ll explain the math later.
+The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember
+Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&rsquo;t pick your favorite. This makes it easier to remember. Examples: - Dune - Inception - The Raven by Edgar Allan Poe"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('http://example.org/images/fitz-roy-meditation.jpeg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Robert Marck
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Algorithm for Generating a Memorable and Secure Password</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Algorithm for Generating a Memorable and Secure Password</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-08-12T22:34:36-06:00">August 12, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>This is based loosely on the algorithm from XKCD: <a href="https://xkcd.com/936/">https://xkcd.com/936/</a>, and a conversation with a friend. He told me I&rsquo;ll explain the math later.</p>
+<p>The goal is to make a pasword that is 1. Hard to crack, and 2. Easy to remember</p>
+<ol>
+<li>
+<p>Pick a comic/movie/song/painting/poem/book that is meaningful to you. The more meaningful the better, but don&rsquo;t pick your favorite. This makes it easier to remember.
+Examples:
+- Dune
+- Inception
+- The Raven by Edgar Allan Poe</p>
+</li>
+<li>
+<p>Summarize the movie/book/etc with a short phrase.</p>
+<ul>
+<li>Dune: Sand worms and space drugs</li>
+<li>Inception: Dream theives and daddy issues</li>
+<li>Talking birds and dead girlfriends</li>
+</ul>
+</li>
+<li>
+<p>Remove the spaces and misspell a word or two. I prefer to capitalize each word in the phrase but it makes no difference.</p>
+<ul>
+<li>SanndWormsandSppaceDrugs</li>
+<li>DreamTheivesandDaaddyIssues</li>
+<li>TalkingBirrdsandDeadGirlfriennds</li>
+</ul>
+</li>
+<li>
+<p>Insert a meaningful number in the phrase. This makes it a but harder to remember but it helps with security.</p>
+<ul>
+<li>SanndWorms31415andSppaceDrugs</li>
+<li>DreamTheivesandDaaddy1999Issues</li>
+<li>TalkingBirrdsandDeadGirlfriennds2022</li>
+</ul>
+</li>
+<li>
+<p>Add a special character somewhere.</p>
+<ul>
+<li>SanndWorms31415andSppaceDrugs!</li>
+<li>DreamTheives&amp;Daaddy1999Issues</li>
+<li>Talking@BirrdsandDeadGirlfriennds2022</li>
+</ul>
+</li>
+</ol>
+<p>Ok, I&rsquo;ll admit the further down the steps you go the harder it is to remember. Steps 1 and 2 are enough for the average user. Adding step just 3, 4, or 5 will put your password in the impossible-to-crack category. All 5 are for the most paranoid with the best memories. I would only use this strategy for specific high-value targets, and the password would be used ONLY there.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  Robert Marck 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
